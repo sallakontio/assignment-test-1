@@ -20,7 +20,7 @@ Kokeessa korjataan/lisätään toiminnallisuutta kuvitteelliseen maksurajapintak
 
 Ratkaise tehtävät järjestyksessä 1→2→3. 
 
-[Go to step 0](./ASSESSMENT.md)
-[Go to step 1](./ASSESSMENT1.md)
-[Go to step 2](./ASSESSMENT2.md)
-[Go to step 3](./ASSESSMENT3.md)
+[📖 Step 0](./ASSESSMENT.md) ・
+[Step 1](./ASSESSMENT1.md) ・
+[Step 2](./ASSESSMENT2.md) ・
+[Step 3](./ASSESSMENT3.md)

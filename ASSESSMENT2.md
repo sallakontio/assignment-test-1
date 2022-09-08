@@ -15,7 +15,7 @@ I added a skipped test to `payment-02.test.js`.
 3) rerun the tests
 4) also add a similar test for the `makePayment` function below in the `describe("payment" ...` block. 
 
-[Step 0](./ASSESSMENT.md)
-[Step 1](./ASSESSMENT1.md)
-[Step 2](./ASSESSMENT2.md)
+[Step 0](./ASSESSMENT.md) ・
+[Step 1](./ASSESSMENT1.md) ・
+[📖 Step 2](./ASSESSMENT2.md) ・
 [Step 3](./ASSESSMENT3.md)

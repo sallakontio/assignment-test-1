@@ -22,7 +22,7 @@ According to previous discussion, we are dropping support for Amex cards. I adde
 2) fix the code
 3) rerun the tests and check that it passes
 
-[Step 0](./ASSESSMENT.md)
-[Step 1](./ASSESSMENT1.md)
-[Step 2](./ASSESSMENT2.md)
+[Step 0](./ASSESSMENT.md) ・
+[📖 Step 1](./ASSESSMENT1.md) ・
+[Step 2](./ASSESSMENT2.md) ・
 [Step 3](./ASSESSMENT3.md)
