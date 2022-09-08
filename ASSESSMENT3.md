@@ -1,4 +1,4 @@
-# Vaihe 2 - #Q2
+# Vaihe 3 - #Q3
 
 ## Feature request ticket #6344
 
