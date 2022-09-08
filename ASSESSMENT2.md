@@ -13,7 +13,7 @@ I added a skipped test to `payment-02.test.js`.
 1) unskip the test
 2) fix the code by adding a throw/catch around the fetch call.
 3) rerun the tests
-4) also add a similar test for the `makePayment` function below in the `describe("payment" ...` block. 
+4) also add a similar test for the `makePayment` function below in the [describe("payment", ...)](https://github.com/adl32x/assignment-test-1/blob/main/payment-02.test.js#L47) block. 
 
 [Step 0](./ASSESSMENT.md) ・
 [Step 1](./ASSESSMENT1.md) ・
