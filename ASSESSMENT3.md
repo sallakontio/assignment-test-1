@@ -1,6 +1,6 @@
 # Vaihe 3 - #Q3
 
-## Feature request ticket #6344
+## Feature request ticket #6345
 
 Hello from the frontend team,
 

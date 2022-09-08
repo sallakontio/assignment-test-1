@@ -22,6 +22,16 @@ According to previous discussion, we are dropping support for Amex cards. I adde
 2) fix the code
 3) rerun the tests and check that it passes
 
+## Bug ticket #6343
+
+Someone is trying to be funny and hack our system with negative payments. Luckily our API catches those, but it would be best if we'd also check for those. I added a skipped test to `payment-01.test.js`. Could you:
+
+1) unskip the invalid payment object test
+2) fix the code
+3) rerun the tests and check that it passes
+
+ーAndrew
+
 [Step 0](./ASSESSMENT.md) ・
 [📖 Step 1](./ASSESSMENT1.md) ・
 [Step 2](./ASSESSMENT2.md) ・

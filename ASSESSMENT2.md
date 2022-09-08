@@ -1,6 +1,6 @@
 # Vaihe 2 - #Q2
 
-## Bug ticket #6343
+## Bug ticket #6344
 
 Hello from the QA team again,
 
