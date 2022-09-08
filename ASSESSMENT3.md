@@ -8,6 +8,7 @@ The code function for running the whole process, [paymentProcess(..)](https://gi
 
 Instead of true or false, we propose that the function returns these strings instead:
 
+- OK - when all is good
 - INVALID_CARD - when the credit card is invalid
 - INVALID_PERSON - when the person check fails
 - PAYMENT_FAILED - when the payment fails
@@ -15,7 +16,7 @@ Instead of true or false, we propose that the function returns these strings ins
 I added a skipped test to `payment-03.test.js`.
 
 1) unskip the test
-2) fix the code
+2) fix the code and the happy case test
 3) rerun the tests and check that it passes
 4) add a sensible number of tests or expects for all the cases above
 5) ⭐ Read the `3. Payment flow` in CCSpec.md file. How would you change the code and test code so that it's easy to assert the order of execution?
