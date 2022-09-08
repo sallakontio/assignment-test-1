@@ -4,7 +4,7 @@
 
 Hello from the frontend team,
 
-The code function for running the whole process, `paymentProcess(..)` works ok, but we would like to get a bit more detailed information than `true or false` when the function exits. You see, we'd like to for example display "Check your credit card number" to the user, but we can't differentiate between any of the errors. 
+The code function for running the whole process, [paymentProcess(..)](https://github.com/adl32x/assignment-test-1/blob/main/payment.js#:~:text=paymentProcess) works ok, but we would like to get a bit more detailed information than `true or false` when the function exits. You see, we'd like to for example display "Check your credit card number" to the user, but we can't differentiate between any of the errors. 
 
 Instead of true or false, we propose that the function returns these strings instead:
 
