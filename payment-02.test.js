@@ -32,7 +32,7 @@ describe("creditcard", () => {
     expect(isValidCard).toBe(false);
   });
 
-  it.skip("test checkCreditCardValidity when faulty endpoint", async () => {
+  it("test checkCreditCardValidity when faulty endpoint", async () => {
     fetch.mockReject(() => Promise.reject("API error"));
 
     const cc = {
@@ -45,27 +45,42 @@ describe("creditcard", () => {
 });
 
 describe("payment", () => {
-  it("test valid payment", async () => {
-    fetch.mockResponseOnce(JSON.stringify({ ok: true }));
+  try {
+    it("test makePayment", async () => {
+      fetch.mockResponseOnce(JSON.stringify({ ok: true }));
+      const cc = {
+        number: "0123456789012345",
+        cvc: "123",
+      };
+      const payment = { sum: 10 };
+      const makingPayment = await makePayment(cc, payment);
+      expect(makingPayment).toBe(true);
+    });
 
-    const cc = {
-      number: "0123456789012345",
-      cvc: "123",
-    };
-    const payment = { sum: 10 };
-    const isOkPayment = await makePayment(cc, payment);
-    expect(isOkPayment).toBe(true);
-  });
+    it("test valid payment", async () => {
+      fetch.mockResponseOnce(JSON.stringify({ ok: true }));
 
-  it("test invalid payment", async () => {
-    fetch.mockResponseOnce(JSON.stringify({ ok: false }));
+      const cc = {
+        number: "0123456789012345",
+        cvc: "123",
+      };
+      const payment = { sum: 10 };
+      const isOkPayment = await makePayment(cc, payment);
+      expect(isOkPayment).toBe(true);
+    });
 
-    const cc = {
-      number: "0123456789012345",
-      cvc: "123",
-    };
-    const payment = { sum: 10 };
-    const isOkPayment = await makePayment(cc, payment);
-    expect(isOkPayment).toBe(false);
-  });
+    it("test invalid payment", async () => {
+      fetch.mockResponseOnce(JSON.stringify({ ok: false }));
+
+      const cc = {
+        number: "0123456789012345",
+        cvc: "123",
+      };
+      const payment = { sum: 10 };
+      const isOkPayment = await makePayment(cc, payment);
+      expect(isOkPayment).toBe(false);
+    });
+  } catch (error) {
+    return false;
+  }
 });
