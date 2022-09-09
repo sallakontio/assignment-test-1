@@ -32,7 +32,11 @@ function checkCreditCardObject(creditCard) {
   ) {
     return true;
   }
-  if (creditCard.number.startsWith("34" || "37")) return false;
+  if (creditCard.number.startsWith("34" || "37")) {
+    return false;
+  } else {
+    return false;
+  }
 }
 
 /**
