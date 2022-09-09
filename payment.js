@@ -154,7 +154,8 @@ async function paymentProcess(person, creditCardData, paymentData) {
   }
 
   const paymentResult = await makePayment(creditCardData, paymentData);
-  return paymentResult;
+  console.log("OK");
+  return "OK";
 }
 
 module.exports = {

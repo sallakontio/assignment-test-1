@@ -24,7 +24,7 @@ describe("flow", () => {
     const payment = { sum: 10 };
     const paymentIsOk = await paymentProcess(person, cc, payment);
 
-    expect(paymentIsOk).toBe(true);
+    expect(paymentIsOk).toBe("OK");
   });
 
   it("test the payment flow - INVALID_CARD", async () => {
