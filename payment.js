@@ -47,11 +47,11 @@ function checkCreditCardObject(creditCard) {
  * @returns {boolean}
  */
 function checkPaymentObject(payment) {
-  if (payment && typeof payment.sum === "number") {
-    return true;
-  }
   if (payment && typeof payment.sum === "number" && payment.sum < 0) {
     return false;
+  }
+  if (payment && typeof payment.sum === "number") {
+    return true;
   } else {
     return false;
   }
