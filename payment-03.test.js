@@ -27,7 +27,7 @@ describe("flow", () => {
     expect(paymentIsOk).toBe(true);
   });
 
-  it.skip("test the payment flow - INVALID_CARD", async () => {
+  it("test the payment flow - INVALID_CARD", async () => {
     fetch.mockResponseOnce(JSON.stringify({ validCard: false }));
     fetch.mockResponseOnce(JSON.stringify({ ok: true }));
 
@@ -43,7 +43,6 @@ describe("flow", () => {
     const payment = { sum: 10 };
     const paymentIsOk = await paymentProcess(person, cc, payment);
 
-    expect(paymentIsOk).toBe('INVALID_CARD');
+    expect(paymentIsOk).toBe("INVALID_CARD");
   });
 });
-

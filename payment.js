@@ -137,7 +137,7 @@ async function makePayment(creditCardData, paymentData) {
 async function paymentProcess(person, creditCardData, paymentData) {
   const isCreditCardValid = await checkCreditCardValidity(creditCardData);
   if (!isCreditCardValid) {
-    return false;
+    return "INVALID_CARD";
   }
 
   const isPersonValid = checkPersonObject(person);
