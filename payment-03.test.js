@@ -41,9 +41,22 @@ describe("flow", () => {
       cvc: "123",
     };
     const payment = { sum: 10 };
+
+    const person2 = {
+      firstName: "Oliver",
+      middleName: "John",
+      lastName: "McDonald",
+    };
+    const payment2 = { sum: 30 };
+    const cc2 = {
+      number: "0123445329012345",
+      cvc: "132",
+    };
     const paymentIsOk = await paymentProcess(person, cc, payment);
+    const paymentIsOk2 = await paymentProcess(person2, cc2, payment2);
 
     expect(paymentIsOk).toBe("INVALID_CARD");
+    expect(paymentIsOk2).toBe("INVALID_CARD");
   });
 });
 
@@ -57,9 +70,16 @@ describe("person", () => {
         middleName: "Roger",
         lastName: "Smith",
       };
+      const person2 = {
+        firstName: "Oliver",
+        middleName: "John",
+        lastName: "McDonald",
+      };
       const personIsValid = await checkPersonObject(person);
+      const personIsValid2 = await checkPersonObject(person2);
 
       expect(personIsValid).toBe("INVALID_PERSON");
+      expect(personIsValid2).toBe("INVALID_PERSON");
     };
   });
 });
@@ -74,9 +94,16 @@ describe("payment", () => {
         number: "0123456789012345",
         cvc: "123",
       };
+      const payment2 = { sum: 145 };
+      const cc2 = {
+        number: "5678456789012345",
+        cvc: "345",
+      };
       const paymentIsOk = await makePayment(cc, payment);
+      const paymentIsOk2 = await makePayment(cc2, payment2);
 
       expect(paymentIsOk).toBe("PAYMENT_FAILED");
+      expect(paymentIsOk2).toBe("PAYMENT_FAILED");
     };
   });
 });
