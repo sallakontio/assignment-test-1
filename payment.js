@@ -36,9 +36,12 @@ function checkCreditCardObject(creditCard) {
     creditCard &&
     creditCard.number &&
     creditCard.cvc &&
+    creditCard.number.length === 16 &&
     creditCard.number.IndexOf("34") &&
     creditCard.number.IndexOf("37")
   ) {
+    return false;
+  } else {
     return false;
   }
 }
@@ -57,7 +60,7 @@ function checkPaymentObject(payment) {
   if (payment && typeof payment.sum === "number") {
     return true;
   } else {
-    return "PAYMENT_FAILED";
+    return false;
   }
 }
 
@@ -107,7 +110,7 @@ async function makePayment(creditCardData, paymentData) {
   const validArgs =
     checkCreditCardObject(creditCardData) && checkPaymentObject(paymentData);
   if (!validArgs) {
-    return "PAYMENT_FAILED";
+    return false;
   }
 
   try {
