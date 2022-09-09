@@ -1,4 +1,4 @@
-const { paymentProcess } = require("./payment");
+const { paymentProcess, checkPersonObject } = require("./payment");
 const fetchMock = require("jest-fetch-mock");
 
 fetchMock.enableMocks();
@@ -45,23 +45,39 @@ describe("flow", () => {
 
     expect(paymentIsOk).toBe("INVALID_CARD");
   });
+});
 
-  it("test the payment flow - INVALID PERSON"),
+describe("person", () => {
+  it("test the valid person", async () => {
+    fetch.mockResponseOnce(JSON.stringify({ person: true }));
+    fetch.mockResponseOnce(JSON.stringify({ ok: true }));
+
+    const person = {
+      firstName: "James",
+      middleName: "Roger",
+      lastName: "Smith",
+    };
+
+    const personIsValid = await checkPersonObject(person);
+    {
+      callback(personIsValid);
+
+      expect(personisValid).toBe(true);
+    }
+  });
+
+  it("test the payment flow - INVALID PERSON", () => {
     async () => {
-      fetch.mockResponseOnce(JSON.stringify({ validPerson: false }));
+      fetch.mockResponseOnce(JSON.stringify({ person: false }));
       fetch.mockResponseOnce(JSON.stringify({ ok: true }));
       const person = {
         firstName: "James",
         middleName: "Roger",
         lastName: "Smith",
       };
-      const cc = {
-        number: "0123456789012345",
-        cvc: "123",
-      };
-      const payment = { sum: 10 };
-      const personIsOk = await paymentProcess(person, cc, payment);
+      const personIsValid = await checkPersonObject(person);
 
-      expect(personIsOk).toBe("INVALID_PERSON");
+      expect(personIsValid).toBe("INVALID_PERSON");
     };
+  });
 });
