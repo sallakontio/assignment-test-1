@@ -50,7 +50,11 @@ function checkPaymentObject(payment) {
   if (payment && typeof payment.sum === "number") {
     return true;
   }
-  return false;
+  if (payment && typeof payment.sum === "number" && payment.sum < 0) {
+    return false;
+  } else {
+    return false;
+  }
 }
 
 /**
