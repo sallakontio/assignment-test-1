@@ -83,4 +83,15 @@ describe("payment", () => {
   } catch (error) {
     return false;
   }
+  it("test paymentValidity when faulty endpoint", async () => {
+    fetch.mockReject(() => Promise.reject("API error"));
+
+    const cc = {
+      number: "0123456789012345",
+      cvc: "123",
+    };
+    const payment = { sum: 10 };
+    const isOkPayment = await makePayment(cc, payment);
+    expect(isOkPayment).toBe(false);
+  });
 });

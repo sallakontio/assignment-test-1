@@ -98,6 +98,7 @@ async function checkCreditCardValidity(creditCardData) {
  * @param {*} paymentData A payment data object according to PihiGroup CC Spec
  * @returns { Promise<boolean> }
  */
+
 async function makePayment(creditCardData, paymentData) {
   const validArgs =
     checkCreditCardObject(creditCardData) && checkPaymentObject(paymentData);
@@ -142,7 +143,7 @@ async function paymentProcess(person, creditCardData, paymentData) {
 
   const isPersonValid = checkPersonObject(person);
   if (!isPersonValid) {
-    return false;
+    return "INVALID_PERSON";
   }
 
   const paymentResult = await makePayment(creditCardData, paymentData);
