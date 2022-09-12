@@ -154,8 +154,11 @@ async function paymentProcess(person, creditCardData, paymentData) {
   }
 
   const paymentResult = await makePayment(creditCardData, paymentData);
-  console.log("OK");
-  return "OK";
+  if (paymentResult) {
+    return "OK";
+  } else {
+    return "PAYMENT_FAILED";
+  }
 }
 
 module.exports = {
